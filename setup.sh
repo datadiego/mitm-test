@@ -10,13 +10,19 @@ echo ""
 echo "=== Instalando dependencias del proyecto ==="
 uv venv
 source .venv/bin/activate
-uv pip install mitmproxy requests
+uv pip install mitmproxy requests flask
 
-echo ""
-echo "=== Configuración completada ==="
-echo ""
-echo "PASOS SIGUIENTES:"
-echo "1. Edita client.py y cambia 'TU_API' por la URL de tu API"
-echo "2. Activa el entorno virtual: source .venv/bin/activate"
-echo "3. Ejecuta mitmproxy con: mitmdump -s client.py"
-echo "4. Configura tu navegador para usar el proxy localhost:8080"
+source .venv/bin/activate
+python3 server.py
+
+
+# echo ""
+# echo "=== Configuración completada ==="
+# echo ""
+# echo "PASOS SIGUIENTES:"
+# echo "1. Activa el entorno virtual: source .venv/bin/activate"
+# echo "2. En una terminal, ejecuta el servidor: python server.py"
+# echo "3. En client.py, cambia 'TU_API' por http://localhost:5000"
+# echo "4. En otra terminal, ejecuta el proxy: mitmdump -s client.py"
+# echo "5. Configura tu navegador/aplicación para usar el proxy localhost:8080"
+# echo "6. Visita http://localhost:5000 para ver el dashboard"

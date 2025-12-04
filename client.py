@@ -2,7 +2,7 @@ from mitmproxy import http
 import requests
 import json
 
-API_URL = "http://TU_API/collect"
+API_URL = "http://localhost:5000/collect"
 
 def request(flow: http.HTTPFlow):
     data = {
